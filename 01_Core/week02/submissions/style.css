@@ -1,0 +1,162 @@
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h4 {
+	text-align: center;
+}
+
+.clearfix {
+	overflow: auto;
+
+}
+
+p {
+	font-family: Verdana, sans serif;
+}
+
+.sidebar {
+	float:left;
+	width: 15%;
+	border: 2px solid red;
+	height: 300px;
+	overflow: auto;
+	background-color: lightblue;
+}
+
+
+.header {
+	width: 90%;
+	height: 70px;
+	margin: 0;
+	position: relative;
+	z-index: 100;
+	overflow: visible;
+	background: darkblue;
+	border-radius: 10px;
+}
+
+
+/* For the two columns of subheads */
+.subhead {
+	float: left;
+	width: 50%;
+	height: 300px;
+	padding: 20px;
+	border: 2px solid black;
+	position: relative;
+	z-index: 1;
+}
+
+.footer {
+	align-content: center;
+	margin: auto;
+	width: 75%;
+	border: 1px solid black;
+	margin-left: 15%;
+}
+
+.nav_footer {
+	list-style-type: none;
+	text-align: center;
+	float: left;
+	padding: 5px;
+	border: 1px solid black;
+	width: 25%;
+}
+/* For the header nav bar */
+/* The default p margin is 1em (16px). This was causing the dropdown to be 16px away. */
+.header p {
+	width: 20%;
+	height: 100%;
+	vertical-align: center;
+	line-height: 3em;
+	text-align: center;
+	float: left;
+	color: white;
+	padding: 10px;
+	margin: 0;
+
+	position: relative;
+	z-index: 100;
+}
+
+/* Generic nav */
+.nav {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* main nav div*/ 
+.main-content {
+	margin-left: 15%;
+	width: 75%;
+	position: relative;
+	z-index: -1;
+}
+
+.dropdown {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 100;
+ 	
+}
+
+.dropnav {
+	position: relative;
+	z-index: 100;
+}
+
+
+.dropnav:hover,
+.dropdown:hover .dropnav {
+	background-color: lightblue;
+	color: black;
+	border-radius: 10px;
+
+}
+
+.dropdown:hover .dropdown_links {
+	display: block;
+}
+
+
+.dropdown_links a {
+	display: block;
+	color: black;
+	margin: 1px;
+	border-radius: 10px;
+	background: lightgrey;
+	text-decoration: none;
+
+}
+
+.dropdown_links a:hover {
+	background: black;
+	color: white;
+	border: 1px solid black;
+}
+
+.dropdown_links {
+	display: none;
+	position: absolute;
+	width: 20%;
+
+	text-align: center;
+	line-height: 2em;
+
+	
+/* this should push the dropdown to the bottom of the header div but it's not */	
+	right: 0;
+	top: 100%;
+	z-index: 999;
+	
+}
+
+
+
+
+

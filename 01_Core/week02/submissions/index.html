@@ -1,0 +1,106 @@
+<!--
+VERY EASY: Create a bulleted list of the colors of the rainbow
+
+EASY: Create an HTML page with a main headline, two subheads in their own sections and supporting text for each subhead. Topic is up to you. Make sure you have a page title.
+
+MEDIUM: Using semantic HTML, add a footer with a copyright year and social media links (minimum of 3). Add a sidebar with links to outside content.
+
+HARD: Create a contact page with an HTML form with a GET method that will collect the following: First Name, Last Name, Gender (have them pick), Favorite sport (from a dropdown list of at least 5), Checkboxes for what you like on your pizza (from a list of at least 5) and
+the submit button should read, "Save".
+
+VERY HARD: On the same site, create a horizontal navigation of 5 items, one of the items should have a dropdown menu when you hover over it.
+
+VERY HARD: Given a comma separated string of full names, use JavaScript to create an alphabetical-by-Last-Name, ordered list and have it display in an HTML page on your site. Make the last names bold and red using CSS (NOT inline styles).
+
+## Note: Don't freak out about the last one
+
+LAST, BUT NOT LEAST: Make sure to post your site in Github pages. 
+-->
+
+<!-- To Do: 
+1) Make contact form
+2) The last one
+3) Add links to social media
+4) Add real content
+5) Clean up -->
+
+
+<!doctype HTML>
+
+<html>
+
+	<head>
+		<title>Testing, Testing, 1 2 3 </title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<header>
+		<h1>Hello there</h1> 
+	</header>
+	
+	<div class="header clearfix">
+			<p>Nav 1</p>
+			<p>Nav 2</p>
+			<p>Nav 3</p>
+			<p>Nav 4</p>
+				<div class="dropdown">
+    			<p class="dropnav">Dropdown</p>
+    				<div class="dropdown_links">
+      					<a href="#">Link 1</a>
+      					<a href="#">Link 2</a>
+      					<a href="#">Link 3</a>
+    				</div>
+ 			 </div> 
+
+		</div>
+		
+			<div class="sidebar">
+				<h3>External Links</h3>
+				<ul>
+					<li>Link 1</li>
+					<li>Link 2</li>
+					<li>Link 3</li>
+					<li>Link 4</li>
+				</ul>
+			</div>
+
+		<div class="main-content clearfix">
+			<div class="subhead">
+				<h4>Words</h4>
+				<p> Supporting text about stuff </p>
+				<ul>
+					<li>Red</li>
+					<li>Orange</li>
+					<li>Yellow</li>
+					<li>Green</li>
+					<li>Blue</li>
+					<li>Indigo</li>
+					<li>Violet</li>
+				</ul>
+			</div>
+			<div class="subhead">
+				<h4>Words again!</h4>
+				<p>More supporting text about stuff.</p>
+			</div>
+		</div>
+
+		</div>
+
+	</body>
+
+	<footer>
+		<div class="footer clearfix">
+			<ul class="nav">
+				<li class="nav_footer">Copyright 2019</li>
+				<li class="nav_footer">Facebook</li>
+				<li class="nav_footer">Twitter</li>
+				<li class="nav_footer">Linkedin</li>
+			</ul>
+		</div>
+
+	</footer>
+
+
+
+</html>
