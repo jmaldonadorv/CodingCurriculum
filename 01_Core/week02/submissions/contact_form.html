@@ -1,0 +1,66 @@
+
+
+<!--HARD: Create a contact page with an HTML form with a GET method that will collect the following: First Name, Last Name, Gender (have them pick), Favorite sport (from a dropdown list of at least 5), Checkboxes for what you like on your pizza (from a list of at least 5) and
+the submit button should read, "Save". -->
+
+<!doctype HTML>
+
+<html>
+<head>
+
+</head>
+
+<body>
+	<form action="thank_you.html" method="GET" name="visitor_information">
+		
+		<fieldset>
+			<legend>Basic Information</legend>
+				<label for="firstname">First Name:</label>
+				<input type="text" name="firstname" id="firstname">
+				<label for="lastname">Last Name:</label>
+				<input type="text" name="lastname" id="lastname"> <br> <br>
+		
+				<input type="radio" name="gender" value="Female">Female<br> 
+				<input type="radio" name="gender" value="Male" label="FirstName">Male<br> 
+				<input type="radio" name="gender" value="Non-binary" label="FirstName">Non-binary<br> 
+				<input type="radio" name="gender" value="I prefer not to answer" label="FirstName">I prefer not to answer<br> 
+		</fieldset>
+
+	
+		<fieldset>
+			<legend>Let's learn more about you</legend>
+
+				<label for="sports">What is your favorite sport?</label><br>
+				<select name="sports" id="sports">
+					<option>Soccer</option>
+					<option>Basketball</option>
+					<option>Baseball</option>
+					<option>Football</option>
+					<option>Hockey</option>
+
+
+				</select><br><br>
+
+
+				<label for="pizzatoppings">What do you like on your pizza?</label> <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Pepperoni"> Pepperoni <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Green Peppers"> Green Peppers <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Sausage"> Sausage <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Black Olives"> Black Olives <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Pineapple"> Pineapple <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Bacon"> Bacon <br>
+				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Extra Cheese"> Extra Cheese <br>
+		</fieldset>
+
+
+		<input type="submit" value="Save">
+
+
+
+	</form>
+
+</body>
+
+
+
+</html>

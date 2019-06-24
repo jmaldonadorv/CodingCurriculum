@@ -19,7 +19,7 @@ p {
 .sidebar {
 	float:left;
 	width: 15%;
-	border: 2px solid red;
+	border: 1px solid black;
 	height: 300px;
 	overflow: auto;
 	background-color: lightblue;
@@ -57,6 +57,12 @@ p {
 	margin-left: 15%;
 }
 
+.nav {
+	list-style-type: none;
+	padding: 0;
+
+}
+
 .nav_footer {
 	list-style-type: none;
 	text-align: center;
@@ -68,7 +74,6 @@ p {
 /* For the header nav bar */
 /* The default p margin is 1em (16px). This was causing the dropdown to be 16px away. */
 .header p {
-	width: 20%;
 	height: 100%;
 	vertical-align: center;
 	line-height: 3em;
@@ -76,17 +81,24 @@ p {
 	float: left;
 	color: white;
 	padding: 10px;
-	margin: 0;
+	margin: 0%;
+
 
 	position: relative;
 	z-index: 100;
 }
 
+
+
 /* Generic nav */
-.nav {
-	width: 100%;
-	padding: 0;
-	margin: 0;
+.nav_regular p {
+	width: 25%;
+	
+}
+
+.nav_regular a {
+	color: white;
+	text-decoration: none;
 }
 
 /* main nav div*/ 
@@ -98,22 +110,31 @@ p {
 }
 
 .dropdown {
-	width: 100%;
+	width: 20%;
 	height: 100%;
+	float: left;
 	position: relative;
 	z-index: 100;
  	
 }
 
+.nav_regular {
+	float: left;
+	width: 80%;
+}
+
 .dropnav {
 	position: relative;
+	width: 100%;
 	z-index: 100;
+	text-align: center;
 }
 
 
 .dropnav:hover,
 .dropdown:hover .dropnav {
 	background-color: lightblue;
+	width: 100%;
 	color: black;
 	border-radius: 10px;
 
@@ -143,8 +164,7 @@ p {
 .dropdown_links {
 	display: none;
 	position: absolute;
-	width: 20%;
-
+	width: 100%;
 	text-align: center;
 	line-height: 2em;
 
@@ -154,6 +174,12 @@ p {
 	top: 100%;
 	z-index: 999;
 	
+}
+
+/* For the javascript section */
+.last_name {
+	font-weight: bold;
+	color: red;
 }
 
 
