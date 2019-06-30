@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CSS Exercise 7</title>
+  <meta name="description" content="ITA CSS Layout Exercise">
+  <meta name="author" content="Mark Kroh">
+
+  <style>
+  	/* This controls the opacity for all of the lighter elements */
+  	:root {
+  		--medium-opacity: 0.8;
+  		--light-opacity: 0.4;
+  	}
+
+  	.container {
+  		position: relative;
+  		width: 330px;
+  		height: 500px;
+  	}
+
+  	.interior {
+  		width: 100px;
+  		height: 100px;
+  		border: 5px solid white;
+  		margin-left: 69%;
+  		margin-bottom: 5px;
+  	}
+
+  	.div1 {
+  		background-color: red;
+  	}
+
+  	.div1:after {
+  		content: "light red";
+  		background-color: red;
+  		color: red;
+  		opacity: var(--light-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 0;
+  	}
+
+  	.div1:before {
+  		content: "medium red";
+  		background-color: red;
+  		color: red;
+  		opacity: var(--medium-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 35%;
+  	}
+
+  	.div2 {
+  		background-color: orange;
+
+  	}
+
+  	.div2:after {
+  		content: "light orange";
+  		background-color: orange;
+  		color: orange;
+  		opacity: var(--light-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 0;
+  	}
+
+  	.div2:before {
+  		content: "medium orange";
+  		background-color: orange;
+  		color: orange;
+  		opacity: var(--medium-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 35%;
+  	}
+
+  	.div3 {
+  		background-color: yellow;
+  	}
+
+  	.div3:after {
+  		content: "light yellow";
+  		background-color: yellow;
+  		color: yellow;
+  		opacity: var(--light-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 0;
+  	}
+
+  	.div3:before {
+  		content: "medium yellow";
+  		background-color: yellow;
+  		color: yellow;
+  		opacity: var(--medium-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 35%;
+  	}
+
+  	.div4 {
+  		background-color: blue;
+  	}
+
+  	.div4:after {
+  		content: "light blue";
+  		background-color: blue;
+  		color: blue;
+  		opacity: var(--light-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 0;
+  	}
+
+  	.div4:before {
+  		content: "medium blue";
+  		background-color: blue;
+  		color: blue;
+  		opacity: var(--medium-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 35%;
+  	}
+
+  	.div5 {
+  		background-color: violet;
+  	}
+
+
+  	.div5:after {
+  		content: "light violet";
+  		background-color: violet;
+  		color: violet;
+  		opacity: var(--light-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 0;
+  	}
+
+  	.div5:before {
+  		content: "medium violet";
+  		background-color: violet;
+  		color: violet;
+  		opacity: var(--medium-opacity);
+  		width: 100px;
+  		height: 100px;
+  		position: absolute;
+  		left: 35%;
+  	}
+  	
+  </style>
+</head>
+<body>
+	<!-- Do not touch the HTML please -->
+	<div class="container">
+		<div class="interior div1"></div>
+		<div class="interior div2"></div>
+		<div class="interior div3"></div>
+		<div class="interior div4"></div>
+		<div class="interior div5"></div>
+	</div>
+</body>
+</html>
