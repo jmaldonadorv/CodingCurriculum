@@ -9,6 +9,33 @@
   <meta name="author" content="Mark Kroh">
 
   <style>
+  /* Set the container to relative so that the red position can be set to absolute */ 
+  	.container {
+  		width: 245px;
+  		position: relative;
+  	}
+
+  	.interior {
+  		width: 100px;
+  		height: 100px;
+  		margin: 10px;
+  	}
+
+  	.div1,
+  	.div2,
+  	.div3,
+  	.div4 {
+  		background-color: blue;
+  		display: inline-block;
+  	}
+
+  	.div5 {
+  		background-color: red;
+  		position: absolute;
+  		top: 25%;
+  		left: 25%;
+  		transform: rotate(45deg);
+  	}
   	
   </style>
 </head>
