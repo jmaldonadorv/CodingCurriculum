@@ -16,15 +16,6 @@ VERY HARD: Given a comma separated string of full names, use JavaScript to creat
 
 LAST, BUT NOT LEAST: Make sure to post your site in Github pages. 
 -->
-
-<!-- To Do: 
-DONE 1) Make contact form 
-DONE 2) The last one 
-3) Add links to social media
-4) Add real content
-5) Clean up -->
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,7 +26,23 @@ DONE 2) The last one
 		<header>
 			<h1>Welcome to Week 2 RV ITA Homework</h1> 
 		</header>
-		<nav class="header clearfix">
+		<nav class="header">
+			<ul class="nav_regular">
+				<li><a href="js_names.html">ITA Cohort</a></li>
+				<li><a href="#">Not A</a></li>
+				<li><a href="#">Real Link</a></li>
+				<li><a href="contact_form.html">Contact Form</a></li>
+				<li class="dropnav">Dropdown
+					<ul class="dropdown_links">
+						<li><a href="#">Link1</a></li>
+						<li><a href="#">Link2</a></li>
+						<li><a href="#">Link3</a></li>
+					</ul></li>
+			</ul>
+
+
+
+			<!--
 			<div class="nav_regular">
 				<p><a href="js_names.html">ITA Cohort</a></p>
 				<p><a href="#">Not A</a></p>
@@ -49,39 +56,41 @@ DONE 2) The last one
 	      				<a href="#">Link 2</a>
 	      				<a href="#">Link 3</a>
 	    			</span>
-	 		</div>
+	 		</div> -->
 		</nav><!--/nav header-->
-			<aside class="sidebar">
-				<h3>Red Ventures Non-Profits</h3>
-				<ul>
-					<li><a href=" https://www.goldendoorscholars.org/">Golden Door Scholars</a></li>
-					<li><a href="https://www.roadtohire.org/">Road to Hire</a></li>
-					<li><a href="https://www.forward787.com/">Forward 787</a></li>
-					<li><a href="https://lifesports.org/">LifeSports</a></li>
+		<aside class="sidebar">
+			<h3>Red Ventures Non-Profits</h3>
+			<ul>
+				<li><a href=" https://www.goldendoorscholars.org/">Golden Door Scholars</a></li>
+				<li><a href="https://www.roadtohire.org/">Road to Hire</a></li>
+				<li><a href="https://www.forward787.com/">Forward 787</a></li>
+				<li><a href="https://lifesports.org/">LifeSports</a></li>
+			</ul>
+		</aside><!--/sidebar aside-->
+			
+		<main class="main-content clearfix">
+			<div class="subhead">
+				<h4>My RV History</h4>
+				<p>I am on my way to my 3rd different career in 4.5 years at Red Ventures.</p>
+				<p>I started as a CE analyst/associate out of school and through a combination of timing and relevant experience, joined the inaugural Analytics team in August of 2017.</p>
+				<p>After leading data integration/reporting strategy for multiple new partnerships (and refusing to do so again after Amex...), I moved to the central Common Data Model team where I focused on building out standardized reporting and advanced analytics tools using Tableau.</p>
+				<p>And now here I am, beyond excited for my foray into software engineering! With a background in marketing, data analytics, and software engineering I can't wait to see what I can do for RV in the future.</p>
+			</div>
+			<div class="subhead">
+				<h4>It's Pride Month!</h4>
+				<p>What better than making an unordered list of the Pride flag?</p>
+				<ul class="rainbow">
+					<li style="background:red">Red</li>
+					<li style="background:orange">Orange</li>
+					<li style="background:yellow">Yellow</li>
+					<li style="background:green;color:white">Green</li>
+					<li style="background:blue;color:white">Blue</li>
+					<li style="background:indigo; color:white;">Indigo</li>
+					<li style="background:violet">Violet</li>
 				</ul>
-			</aside><!--/sidebar aside-->
-			<main class="main-content clearfix">
-				<div class="subhead">
-					<h4>My RV History</h4>
-					<p>I am on my way to my 3rd different career in 4.5 years at Red Ventures.</p>
-					<p>I started as a CE analyst/associate out of school and through a combination of timing and relevant experience, joined the inaugural Analytics team in August of 2017.</p>
-					<p>After leading data integration/reporting strategy for multiple new partnerships (and refusing to do so again after Amex...), I moved to the central Common Data Model team where I focused on building out standardized reporting and advanced analytics tools using Tableau.</p>
-					<p>And now here I am, beyond excited for my foray into software engineering! With a background in marketing, data analytics, and software engineering I can't wait to see what I can do for RV in the future.</p>
-				</div>
-				<div class="subhead">
-					<h4>It's Pride Month!</h4>
-					<p>What better than making an unordered list of the Pride flag?</p>
-					<ul class="rainbow">
-						<li style="background:red">Red</li>
-						<li style="background:orange">Orange</li>
-						<li style="background:yellow">Yellow</li>
-						<li style="background:green;color:white">Green</li>
-						<li style="background:blue;color:white">Blue</li>
-						<li style="background:indigo; color:white;">Indigo</li>
-						<li style="background:violet">Violet</li>
-					</ul>
-				</div>
-			</main><!--/main-->
+			</div>
+		</main><!--/main-->
+		
 		<footer>
 			<nav class="footer clearfix">
 				<ul class="nav">
