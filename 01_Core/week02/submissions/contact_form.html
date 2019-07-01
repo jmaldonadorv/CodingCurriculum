@@ -2,65 +2,58 @@
 
 <!--HARD: Create a contact page with an HTML form with a GET method that will collect the following: First Name, Last Name, Gender (have them pick), Favorite sport (from a dropdown list of at least 5), Checkboxes for what you like on your pizza (from a list of at least 5) and
 the submit button should read, "Save". -->
-
 <!DOCTYPE html>
 
 <html>
-<head>
-
-</head>
-
-<body>
-	<form action="thank_you.html" method="GET" name="visitor_information">
-		
-		<fieldset>
-			<legend>Basic Information</legend>
-				<label for="firstname">First Name:</label>
-				<input type="text" name="firstname" id="firstname">
-				<label for="lastname">Last Name:</label>
-				<input type="text" name="lastname" id="lastname"> <br> <br>
-		
-				<input type="radio" name="gender" value="Female">Female<br> 
-				<input type="radio" name="gender" value="Male" label="FirstName">Male<br> 
-				<input type="radio" name="gender" value="Non-binary" label="FirstName">Non-binary<br> 
-				<input type="radio" name="gender" value="I prefer not to answer" label="FirstName">I prefer not to answer<br> 
-		</fieldset>
-
-	
-		<fieldset>
-			<legend>Let's learn more about you</legend>
-
-				<label for="sports">What is your favorite sport?</label><br>
-				<select name="sports" id="sports">
-					<option>Soccer</option>
-					<option>Basketball</option>
-					<option>Baseball</option>
-					<option>Football</option>
-					<option>Hockey</option>
-
-
-				</select><br><br>
-
-
-				<label for="pizzatoppings">What do you like on your pizza?</label> <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Pepperoni"> Pepperoni <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Green Peppers"> Green Peppers <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Sausage"> Sausage <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Black Olives"> Black Olives <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Pineapple"> Pineapple <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Bacon"> Bacon <br>
-				<input type="checkbox" name="pizzatoppings" id="pizzatoppings" value="Extra Cheese"> Extra Cheese <br>
-		</fieldset>
-
-
-		<input type="submit" value="Save">
-
-
-
-	</form>
-
-</body>
-
-
-
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<title>Contact Form</title>
+	</head>
+	<body>
+		<form action="thank_you.html" method="GET" name="visitor_information">
+			<fieldset>
+				<legend>Basic Information</legend>
+					<label for="firstname">First Name:</label>
+					<input type="text" name="firstname" id="firstname">
+					<label for="lastname">Last Name:</label>
+					<input type="text" name="lastname" id="lastname"> <br> <br>
+			
+					<label for="female">Female
+					<input type="radio" name="gender" id="female" value="female"></label>
+					<label for="male">Male
+					<input type="radio" name="gender" id="male" value="male"></label>
+					<label for="non_binary">Non-binary
+					<input type="radio" name="gender" id="non_binary" value="non_binary"></label>
+					<label for="no_answer">I prefer not to answer
+					<input type="radio" name="gender" id="no_answer" value="no_answer"></label>
+			</fieldset>
+			<fieldset>
+				<legend>Let's learn more about you</legend>
+					<label for="sports">What is your favorite sport?</label>
+					<select name="sports" id="sports">
+						<option name="sports" value="Soccer">Soccer</option>
+						<option name="sports" value="Basketball">Basketball</option>
+						<option name=" sports" value="Baseball">Baseball</option>
+						<option name="sports" value="Football">Football</option>
+						<option name="sports" value="Hockey">Hockey</option>
+					</select>
+					<label for="pizzatoppings">What do you like on your pizza?</label>
+					<label for="pepperoni">Pepperoni
+					<input type="checkbox" name="pizzatoppings" id="pepperoni" value="pepperoni"></label>
+					<label for="green_peppers">Green Peppers
+					<input type="checkbox" name="pizzatoppings" id="green_peppers" value="green_peppers"></label>
+					<label for="sausage">Sausage
+					<input type="checkbox" name="pizzatoppings" id="sausage" value="sausage"></label>
+					<label for="black_olives">Black Olives
+					<input type="checkbox" name="pizzatoppings" id="black_olives" value="black_olives"></label>
+					<label for="pineapple">Pineapple
+					<input type="checkbox" name="pizzatoppings" id="pineapple" value="pineapple"></label>
+					<label for="bacon">Bacon
+					<input type="checkbox" name="pizzatoppings" id="bacon" value="bacon"></label>
+					<label for="extra_cheese">Extra Cheese
+					<input type="checkbox" name="pizzatoppings" id="extra_cheese" value="extra_cheese"></label>
+			</fieldset>
+			<input type="submit" value="Save">
+		</form>
+	</body>
 </html>
