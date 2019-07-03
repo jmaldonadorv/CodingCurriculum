@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>A Very Potter Home</title>
+		<link rel="stylesheet" href="../stylesheets/normalize.css">
+		<link rel="stylesheet" href="../stylesheets/style.css">
+		<script src="validation.js"></script>
+	</head><!--/head-->
+	<body>
+		<header>
+			<nav class="main-nav">
+				<ul class="nav__ul h-marg-0">
+					<li><img src="../images/logo_banner.png" class="logo"></li>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../products/index.html">Products</a></li>
+					<li><a href="../contact/index.html">Contact</a></li>
+					<li><a href="../search/index.html">Search</a></li>
+				</ul>
+				<!--.footer__ul-->
+			</nav>
+			<!-- header navigation with Home, Product, Search, Contact, Cart -->
+		</header>
+		<main>
+			<h1 class="h-padtop">Drop us a line!</h1>
+			<p>To get in touch, please fill out the contact form below. Fields with a red asterisk are required. </p>
+
+			<form method="GET" name="contact_information" class="contact-form">
+				<fieldset>
+					<legend>Who are you?</legend>
+						<label for="firstname">First Name:<span class="contact-form--required">*</span></label>
+						<input type="text" name="firstname" id="firstname">
+						<label for="lastname">Last Name:</label>
+						<input type="text" name="lastname" id="lastname">
+						<label for="email">Email:<span class="contact-form--required">*</span></label>
+						<input type="text" name="email" id="email">
+						<label for="phone">Phone:</label>
+						<input type="text" name="phone" id="phone">	
+				</fieldset>
+				<fieldset>
+					<legend>How do you prefer to be contacted?<span class="contact-form--required"> *</span></legend>
+						<label for="pref_email">
+						<input type="radio" name="contact_pref" id="pref_email" value="pref_email"> Email</label>
+						<label for="pref_phone">
+						<input type="radio" name="contact_pref" id="pref_phone" value="pref_phone"> Phone</label>
+				</fieldset>
+				<fieldset>
+					<legend>How did you hear about us?<span class="contact-form--required">*</span></legend>
+					
+						<label for="conference">
+						<input type="checkbox" name="hear_about_us" id="conference" value="conference"> Conference</label>
+						<label for="tv">
+						<input type="checkbox" name="hear_about_us" id="tv" value="tv"> TV</label>
+						<label for="radio">
+						<input type="checkbox" name="hear_about_us" id="radio" value="radio"> Radio</label>
+						<label for="word_of_mouth">
+						<input type="checkbox" name="hear_about_us" id="word_of_mouth" value="word_of_mouth"> Word of mouth</label>
+						<label for="pineapple">
+						<input type="checkbox" name="hear_about_us" id="other" value="other"> Other</label>
+
+						<label for="comments">What feedback or questions do you have for us today?</label>
+						<textarea name="comments" id="comments" rows="5" cols="50" wrap="virtual"></textarea>
+
+
+				</fieldset>
+				<input type="submit" value="Save" class="btn--save">
+			</form>
+			<!--/.contact_form-->
+		</main>
+		<footer>
+			<nav class="footer-nav">
+				<ul class="nav__ul h-ul-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Search</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+				<!--.footer__ul-->
+			</nav>
+			<!--/.footer-nav-->
+		</footer>
+	</body>
+</html>

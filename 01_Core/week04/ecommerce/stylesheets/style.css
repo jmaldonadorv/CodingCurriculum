@@ -14,14 +14,25 @@ a {
 }
 
 main {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 80px);
   padding-top: 10px;
   width: 95%;
   margin: auto;
 }
 
-.h-padtop-50 {
-  padding-top: 50px;
+.h-marg-0 {
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.h-padtop {
+  padding-top: 200px;
 }
 
 .h-ul-nav {
@@ -30,12 +41,17 @@ main {
   display: inline-block;
 }
 
+.h-bold-black {
+  font-weight: bold;
+  font-color: black;
+}
+
 
 .slider {
   width: 100%;
   max-width: 1000px;
   position: relative;
-  padding-top: 50px;
+  padding-top: 120px;
   margin: auto;
   text-align: center;
   z-index: 1;
@@ -45,6 +61,11 @@ main {
 /* Hide the images by default */
 .images {
   display: none;
+  max-height: 400px;
+}
+
+.slider__image {
+  height: 400px;
 }
 
 /* Next & previous buttons */
@@ -86,7 +107,7 @@ main {
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 4px;
+  bottom: 0px;
   text-align: center;
   margin: 0;
 }
@@ -223,44 +244,54 @@ main {
   border-radius: 5px;
 }
 
+.menu__filter li:hover {
+  cursor: pointer;
+  background-color: darkgrey;
+  border: 1px solid black;
+}
+
 
 /* NAVIGATION CSS */
 
 .main-nav {
   position: fixed;
-  height: 50px;
+  height: 210px;
   background: white;
   width: 100%;
-  margin-top: 20px 0;
-  border-bottom: 2px solid black;
-  outline: 2px solid gold;
-  box-shadow: 0 8px 15px 0 darkgrey;
+  background-color: #E1E5F2;
+  border-bottom: 2px solid #022B3A;
+  outline: 2px solid #BFDBF7;
+  box-shadow: 0 5px 15px 0 #022B3A;
   z-index: 2;
+}
+
+.nav__ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-nav {
   width: 100%;
-  height: 50px;
-  background-color: lightgrey;
+  height: 150px;
+  background-color: #E1E5F2;
   box-shadow: 0 -3px 10px 0 darkgrey;
-  outline: 2px solid gold;
-  border-top: 2px solid black;
+  border-top: 2px solid #022B3A;
+  outline: 2px solid #BFDBF7;
   margin-top: 30px;
 }
 
-.nav__ul {
-  width: 100%;
+
+.nav__ul li {
   display: inline-block;
-  margin: auto;
 
-}
-
-.nav__ul li {;
   font-weight: bolder;
-  padding: 16px 0 5px 0;
-  display: inline-block;
-  width: 19%;
   text-align: center;
+  padding: 5px;
 }
 
 .nav__ul a {
@@ -273,5 +304,134 @@ main {
 }
 
 .nav__ul a:hover {
+  text-decoration: underline;
+}
+
+/* CONTACT FORM CSS */
+
+.contact-form {
+  width: 70%;
+  margin: auto;
+}
+
+.contact-form label {
+  display: block;
+  padding: 5px;
+}
+
+.contact-form fieldset {
+  border: 1px solid darkgrey;
+  background-color: lightgrey;
+  margin: 15px;
+  box-shadow: 5px 5px 8px 0 darkgrey;
+  border-radius: 10px;
+}
+
+.contact-form legend {
+  padding: 5px;
+  background-color: white;
+  border: 1px solid darkgrey;
+  box-shadow: 2px 3px 5px 0 darkgrey;
+}
+
+.contact-form--required {
+  color: red;
+}
+
+.btn--save {
+  cursor: pointer;
+  display: block;
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  margin: auto;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 0 darkgrey;
+  border: 1px solid darkgrey;
+}
+
+.search-bar {
+  width: 300px;
+  height: 40px;
+  border: 1px solid darkgrey;
+  margin: 20px auto;
+  box-shadow: 2px 2px 3px 0 darkgrey;
+  display: flex;
+}
+
+main a {
+  color: black;
+}
+
+main a:hover {
   color: gold;
 }
+
+main a:visted {
+  color: black;
+}
+
+
+/* PDP CSS */
+
+.pdp__wrapper {
+  width: 80%;
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.pdp__image {
+  width: 60%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.pdp__content {
+  width: 40%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+
+/* MEDIA QUERIES FOR > 800 PIXELS */
+
+@media (min-width: 801px) {
+  
+  .logo {
+    height: 100px;
+  }
+
+  .main-nav {
+    height: 120px;
+  }
+  
+  .nav__ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  .nav__ul li a {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-nav {
+    height: 50px;
+  }
+
+  .h-padtop {
+    padding-top: 50px;
+  }
+
+}
+
+

@@ -1,3 +1,5 @@
+// SLIDESHOW FUNCTIONALITY 
+
 //Code for image slider in home banner
 var slideIndex = 1;
 
@@ -33,3 +35,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	showSlides(slideIndex);
   console.log('done');
 });
+
+// END OF SLIDESHOW CODE FUNCTIONALITY
