@@ -31,4 +31,5 @@ function showSlides(n) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
 	showSlides(slideIndex);
+  console.log('done');
 });
