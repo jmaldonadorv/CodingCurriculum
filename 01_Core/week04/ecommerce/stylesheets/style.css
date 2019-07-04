@@ -7,6 +7,7 @@
 body {
   font-family: 'Open Sans','Helvetica','Verdana','sans-serif';
   min-height: 100vh;
+  width: 100%;
 }
 
 a {
@@ -14,7 +15,7 @@ a {
 }
 
 main {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 200px);
   padding-top: 10px;
   width: 95%;
   margin: auto;
@@ -49,9 +50,8 @@ main {
 
 .slider {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1250px;
   position: relative;
-  padding-top: 120px;
   margin: auto;
   text-align: center;
   z-index: 1;
@@ -65,14 +65,15 @@ main {
 }
 
 .slider__image {
-  height: 400px;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -101,8 +102,8 @@ main {
 /* Caption text */
 .slider__caption {
   color: #f2f2f2;
-  background-color: black;
-  opacity: 0.7;
+  background-color: #022B3A;
+  opacity: 0.6;
   width: 100%;
   font-size: 15px;
   padding: 8px 12px;
@@ -171,9 +172,10 @@ main {
   margin: auto;
   margin-top: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  align-content: center;
+  
 }
 
 
@@ -182,14 +184,18 @@ main {
 .product__item {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
+}
+
+.featured__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .featured__image,
 .product__image {
   padding: 0 30px;
-  align-self: center;
+  flex
 }
 
 .featured__name,
@@ -376,31 +382,63 @@ main a:visted {
 /* PDP CSS */
 
 .pdp__wrapper {
-  width: 80%;
-  height: 600px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
+  flex-direction: column;
+  text-align: center;
 }
 
 .pdp__image {
-  width: 60%;
-  height: 100%;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
 .pdp__content {
-  width: 40%;
-  height: 100%;
-  border: 1px solid red;
+  padding: 20px;
 }
 
+
+.pdp__image--main {
+  padding: 20px;
+}
+
+
+.pdp__image--thumbnails {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+.img--thumbnail {
+  max-width: auto;
+  align-self: center;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px auto;
+  height: 95px;
+  opacity: 0.6;
+  border: 1px solid lightgrey;
+}
+
+.img--thumbnail:hover {
+  opacity: 1.0;
+}
+
+.img--main {
+  display: block;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+}
 
 /* MEDIA QUERIES FOR > 800 PIXELS */
 
 @media (min-width: 801px) {
   
+  main {
+    min-height: calc(100vh - 80px)
+  }
+
   .logo {
     height: 100px;
   }
@@ -429,9 +467,29 @@ main a:visted {
   }
 
   .h-padtop {
-    padding-top: 50px;
+    padding-top: 120px;
+  }
+
+  .featured,
+  .product {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .pdp__wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: flex-start;
+    margin: auto;
   }
 
 }
-
 
