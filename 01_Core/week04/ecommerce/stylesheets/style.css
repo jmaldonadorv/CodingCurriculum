@@ -389,6 +389,7 @@ main a:visted {
 
 .pdp__image {
   display: flex;
+  width: 50%;
   flex-direction: column;
 }
 

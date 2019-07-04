@@ -1,39 +1,41 @@
 // SLIDESHOW FUNCTIONALITY 
 
 //Code for image slider in home banner
-var slideIndex = 1;
+var imageIndex = 1;
 
 
 // Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusImages(n) {
+  showImages(imageIndex += n);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentImage(n) {
+  showImages(imageIndex = n);
 }
 
-function showSlides(n) {
+function showImages(n) {
   var i;
-  var slides = document.getElementsByClassName("images");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
+  var images = document.getElementsByClassName("images");
+  var selector = document.getElementsByClassName("img--selector");
+  if (n > images.length) {imageIndex = 1} 
+  if (n < 1) {imageIndex = images.length}
+  for (i = 0; i < images.length; i++) {
+      images[i].style.display = "none"; 
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+  for (i = 0; i < selector.length; i++) {
+      selector[i].className = selector[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
+  images[imageIndex-1].style.display = "block"; 
+  selector[imageIndex-1].className += " active";
 }
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-	showSlides(slideIndex);
+	showImages(imageIndex);
   console.log('done');
 });
 
 // END OF SLIDESHOW CODE FUNCTIONALITY
+
+
