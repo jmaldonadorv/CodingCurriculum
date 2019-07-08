@@ -47,9 +47,12 @@ main {
   font-color: black;
 }
 
+.h-text-center {
+  text-align: center;
+}
+
 
 .slider {
-  width: 100%;
   max-width: 1250px;
   position: relative;
   margin: auto;
@@ -60,13 +63,12 @@ main {
 
 /* Hide the images by default */
 .images {
-  display: none;
   max-height: 400px;
 }
 
 .slider__image {
   width: 100%;
-  object-fit: cover;
+
 }
 
 /* Next & previous buttons */
@@ -75,7 +77,6 @@ main {
   position: absolute;
   top: 60%;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -105,10 +106,10 @@ main {
   background-color: #022B3A;
   opacity: 0.6;
   width: 100%;
-  font-size: 15px;
+  font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 0px;
+  bottom: 2px;
   text-align: center;
   margin: 0;
 }
@@ -125,8 +126,8 @@ main {
 
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -164,24 +165,21 @@ main {
 }
 
 
-/* FEATURED AND PRODUCT CSS */
+/* FEATURED AND PRODUCT CSS 
 
-.featured,
-.product {
+Currently same CSS being used for featured & full product list sections */
+
+.featured {
   max-width: 700px;
   margin: auto;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  
+  align-items: center;
 }
-
-
-
-.featured__item,
-.product__item {
+/* Full item, including image, name, and price */
+.featured__item {
   display: flex;
   flex-direction: column;
 }
@@ -192,35 +190,37 @@ main {
   align-items: center;
 }
 
-.featured__image,
-.product__image {
+.featured__image {
   padding: 0 30px;
   flex
 }
 
-.featured__name,
-.product_name {
+.featured__name {
   text-align: center;
   font-style: italic;
   color: black;
-  font-size: 16px;
+  font-size: 15px;
+  padding: 5px;
   font-weight: lighter;
   margin: 0;
 }
 
-.featured__price,
-.product__price {
+.featured__price {
   text-align: center;
   color: black;
   font-weight: bold;
+  font-size: 13px;
   margin: 5px 0 10px 0;
 }
 
 /* END OF FEATURED CSS */
 
-/* PRODUCT CSS */
+/* PRODUCT CSS 
+Specifically for the product page
+*/
 .menu__filter {
   padding-top: 10px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -283,7 +283,7 @@ main {
 
 .footer-nav {
   width: 100%;
-  height: 150px;
+  height: 120px;
   background-color: #E1E5F2;
   box-shadow: 0 -3px 10px 0 darkgrey;
   border-top: 2px solid #022B3A;
@@ -357,6 +357,19 @@ main {
   border: 1px solid darkgrey;
 }
 
+.btn--add-cart {
+  cursor: pointer;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  margin: auto;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 0 darkgrey;
+  border: 1px solid darkgrey;
+}
+
 .search-bar {
   width: 300px;
   height: 40px;
@@ -389,8 +402,10 @@ main a:visted {
 
 .pdp__image {
   display: flex;
+  margin: auto;
   width: 50%;
   flex-direction: column;
+  align-items: center;
 }
 
 .pdp__content {
@@ -400,6 +415,7 @@ main a:visted {
 
 .pdp__image--main {
   padding: 20px;
+  height: 430px;
 }
 
 
@@ -407,16 +423,15 @@ main a:visted {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
 
 }
 .img--thumbnail {
   max-width: auto;
   align-self: center;
-  display: inline-block;
   padding: 5px;
   margin: 5px auto;
-  height: 95px;
+  height: 70px;
   opacity: 0.6;
   border: 1px solid lightgrey;
 }
@@ -432,12 +447,22 @@ main a:visted {
   margin: auto;
 }
 
+.form__dropdown {
+  min-width: 75px;
+  display: inline-block;
+  margin: 20px;
+}
+
+#comments {
+  width: 90%;
+}
+
 /* MEDIA QUERIES FOR > 800 PIXELS */
 
 @media (min-width: 801px) {
   
   main {
-    min-height: calc(100vh - 80px)
+    min-height: calc(100vh - 400px)
   }
 
   .logo {
@@ -473,7 +498,7 @@ main a:visted {
 
   .featured,
   .product {
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     margin-top: 10px;
     display: flex;
@@ -483,7 +508,7 @@ main a:visted {
   }
 
   .pdp__wrapper {
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -492,5 +517,14 @@ main a:visted {
     margin: auto;
   }
 
+  .pdp__image--main {
+    width: 450px;
+  }
+
+  .img--thumbnail {
+    height: 80px;
+  }
+
 }
+
 

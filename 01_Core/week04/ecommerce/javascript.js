@@ -1,7 +1,7 @@
 // SLIDESHOW FUNCTIONALITY 
 
 //Code for image slider in home banner
-var imageIndex = 1;
+let imageIndex = 1;
 
 
 // Next/previous controls
@@ -14,15 +14,21 @@ function currentImage(n) {
   showImages(imageIndex = n);
 }
 
+// To change how the images are 
 function showImages(n) {
-  var i;
-  var images = document.getElementsByClassName("images");
-  var selector = document.getElementsByClassName("img--selector");
-  if (n > images.length) {imageIndex = 1} 
-  if (n < 1) {imageIndex = images.length}
+  let images = document.getElementsByClassName("images");
+  let selector = document.getElementsByClassName("img--selector");
+  if (n > images.length) {
+    imageIndex = 1
+  } 
+  else if (n < 1) {
+    imageIndex = images.length
+  }
+  // To make sure all of the images are hidden.
   for (i = 0; i < images.length; i++) {
       images[i].style.display = "none"; 
   }
+
   for (i = 0; i < selector.length; i++) {
       selector[i].className = selector[i].className.replace(" active", "");
   }
@@ -33,7 +39,6 @@ function showImages(n) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
 	showImages(imageIndex);
-  console.log('done');
 });
 
 // END OF SLIDESHOW CODE FUNCTIONALITY
