@@ -1,25 +1,27 @@
 
 import random
-board = [' ']*10
 
+# Creating a list of all the variables needed for every game reset
 def start_game():
+    game_status = True
     board = [' ']*10
     player_marks = player_input()
     player_1_mark = player_marks[0]
     player_2_mark = player_marks[1]
     active_player = choose_first()
-    game_list = [board, player_1_mark, player_2_mark, active_player]
+    game_list = [board, player_1_mark, player_2_mark, active_player, game_status]
     
     return game_list
 
+# This will control the entire game. If it's false, the program will quit
 def play_again():
-    play = input('Do you want to play a new game? (y/n)')
+    play = input('Do you want to play a new game? (y/n) ')
     if play == 'y':
-        active_game = True
+        return True
     else: 
-        active_game = False
-    return active_game
+        return False
 
+# To display the board
 def display_board(board): 
     print('\n'*100)
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
@@ -28,6 +30,7 @@ def display_board(board):
     print('-----------')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
 
+# To capture the player's mark choice
 def player_input():
     marker = ''
     # So that we are only going to accept an 'X' or 'O', this loop will run until one of the inputs is as expected.
@@ -47,13 +50,14 @@ def choose_first():
     return first_player
 
 # To determine if the board is full. Incrementing the full_spots for every empty space, and if it's the full board, return false so we can add more.
+# I didn't end up adding this in quiet yet, but it would be an elif after checking for the win
 def full_board_check(board):
     full_spots = 0
-    for i in board:
-        if board[i] == ' ':
+    for spot in board:
+        if not spot == ' ':
             full_spots += 1
     
-    return full_spots == 10
+    return full_spots == 9
 
 def space_check(board, position):
     # If the string is just a space, the position is free so will return true.
@@ -62,7 +66,7 @@ def space_check(board, position):
 def player_choice(board, player):
     position = 0
     active = player[-1]
-    position = int(input(f'Player {active}: Please enter a number between 1-9 for your next spot.'))
+    position = int(input('Please enter a number between 1-9 for your next spot: '))
     # If the board is free and the 
     if space_check(board, position) and position in [1,2,3,4,5,6,7,8,9]:
         return position
@@ -87,41 +91,45 @@ def win_check(board,mark):
 
     # for player1's turn
 
-
 # Game Play
 
-
-new_game = start_game()
-
-
-while True:
-    active_player = new_game[3]
-    board = new_game[0]
-    player_1_mark = new_game[1]
-    player_2_mark = new_game[2]
-    # Player 1's turn
-    if active_player == 'player_1':
-        display_board(board)
-        position = player_choice(board, "player_1")
-        board = place_marker(board, player_1_mark, position)
-        #check for win, congratulate if so, otherwise change turns
-        if win_check(board, player_1_mark):
+while play_again():
+    board, player_1_mark, player_2_mark, active_player, game_status = start_game()
+    
+    while game_status:
+        # Player 1's turn
+        if active_player == 'player_1':
             display_board(board)
-            print('Congratulations, Player 1 won!')
-            play_again()
-        else: 
+            print("Player 1, it's your turn.")
+            position = player_choice(board, "player_1")
+            board = place_marker(board, player_1_mark, position)
+            #check for win, congratulate if so, otherwise change turns
+            if win_check(board, player_1_mark):
+                display_board(board)
+                print('Congratulations, Player 1 won!')
+                game_status = False
+            # check to see if the board is full. If so, the game is over.
+            elif full_board_check(board):
+                display_board(board)
+                print('The board is full, so the game is over.')
+                game_status = False
+            else: 
+                display_board(board)
+                active_player = 'player_2'
+         #Player 2's turn
+        else:
             display_board(board)
-            active_player = 'player_2'
-     #Player 2's turn
-    else:
-        display_board(board)
-        position = player_choice(board, "player_2")
-        board = place_marker(board, player_2_mark, position)
-        #check for win, congratulate if so, otherwise change turns
-        if win_check(board, player_2_mark):
-            display_board(board)
-            print('Congratulations, Player 2 won!')
-            play_again()
-        else: 
-            display_board(board)
-            active_player = 'player_1'
+            print("Player 2, it's your turn.")
+            position = player_choice(board, "player_2")
+            board = place_marker(board, player_2_mark, position)
+            #check for win, congratulate if so, otherwise change turns
+            if win_check(board, player_2_mark):
+                display_board(board)
+                print('Congratulations, Player 2 won!')
+                game_status = False
+            elif full_board_check(board):
+                print('The board is full, so the game is over.')
+                game_status = False
+            else: 
+                display_board(board)
+                active_player = 'player_1'
