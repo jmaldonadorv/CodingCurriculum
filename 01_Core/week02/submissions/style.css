@@ -1,0 +1,208 @@
+* {
+	box-sizing: border-box;
+	font-family: Verdana, sans serif;
+}
+
+h1,
+h4 {
+	text-align: center;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.25em;
+}
+
+/* HEADER NAVIGATION CSS */
+
+.header {
+	height: 70px;
+	margin: 0;
+	z-index: 100;
+	background: red;
+	border: 2px solid black;
+}
+
+.nav_regular {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+/* Generic nav */
+
+.nav_regular li,
+.dropnav {
+	float: left;
+	position: relative;
+	list-style-type: none;
+	text-align: center;
+	color: white;
+	padding: 25px;
+
+}
+
+.nav_regular a {
+	color: white;
+	text-decoration: none;
+}
+
+.nav_regular li:hover {
+	background-color: black;
+}
+
+.dropdown_links {
+	display: none;
+	text-align: center;
+	position: absolute;
+	line-height: 2em;
+	top: 100%;
+	left: 0px;
+	padding: 0;
+	width: 100%;
+}
+
+.dropnav:hover .dropdown_links {
+	display: block;
+}
+
+.dropdown_links li {
+	display: block;
+	color: black;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	background: black;
+	text-decoration: none;
+	border: 1px solid black;
+}
+
+.dropdown_links li:hover {
+	background-color: lightgrey;
+	color: white;
+	border: 1px solid black;
+}
+
+/* END OF HEADER NAVIGATION CSS */
+
+/* SIDEBAR NAVIGATION */ 
+
+.sidebar,
+.main-content {
+	display: block;
+	height: 500px;
+	z-index: -1;
+	margin-top: 10px;
+}
+
+.sidebar {
+	float:left;
+	width: 15%;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px 0 2px 2px;
+	background-color: lightgrey;
+	min-width: 175px;
+	text-align: center;
+}
+
+.sidebar ul {
+	padding: 0;
+	line-height: 1.75;
+	width: 100%;
+}
+
+.sidebar a {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 2px;
+}
+
+.sidebar li:hover {
+	background: black;
+	color: white;
+}
+
+.sidebar a:hover{
+	color: white;
+}
+
+/* main CONTENT div*/ 
+.main-content {
+	margin-left: 15%;
+}
+
+.rainbow {
+	display: block;
+	line-height: 2em;
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+
+/* For the two columns of subheads */
+.subhead {
+	float: left;
+	width: 50%;
+	padding: 20px;
+	border: 2px solid black;
+	height: 100%;
+	overflow: auto;
+}
+
+/* FOOTER NAVIGATION CSS */
+
+.footer {
+	align-content: center;
+	border: 1px solid black;
+}
+
+.nav {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.nav_footer  {
+	list-style-type: none;
+	text-align: center;
+	float: left;
+	padding: 5px;
+	border: 1px solid black;
+	width: 25%;
+	margin-top: 0;
+}
+
+.nav_footer a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+.nav_footer a:hover {
+	color: red;
+}
+
+/* END OF FOOTER CSS */
+
+/* For the javascript section */
+.last_name {
+	font-weight: bold;
+	color: red;
+}
+
+/* Form styling */
+
+label {
+	display: block;
+}
+

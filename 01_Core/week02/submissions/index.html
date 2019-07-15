@@ -1,0 +1,105 @@
+<!--
+VERY EASY: Create a bulleted list of the colors of the rainbow
+
+EASY: Create an HTML page with a main headline, two subheads in their own sections and supporting text for each subhead. Topic is up to you. Make sure you have a page title.
+
+MEDIUM: Using semantic HTML, add a footer with a copyright year and social media links (minimum of 3). Add a sidebar with links to outside content.
+
+HARD: Create a contact page with an HTML form with a GET method that will collect the following: First Name, Last Name, Gender (have them pick), Favorite sport (from a dropdown list of at least 5), Checkboxes for what you like on your pizza (from a list of at least 5) and
+the submit button should read, "Save".
+
+VERY HARD: On the same site, create a horizontal navigation of 5 items, one of the items should have a dropdown menu when you hover over it.
+
+VERY HARD: Given a comma separated string of full names, use JavaScript to create an alphabetical-by-Last-Name, ordered list and have it display in an HTML page on your site. Make the last names bold and red using CSS (NOT inline styles).
+
+## Note: Don't freak out about the last one
+
+LAST, BUT NOT LEAST: Make sure to post your site in Github pages. 
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Testing, Testing, 1 2 3 </title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to Week 2 RV ITA Homework</h1> 
+		</header>
+		<nav class="header">
+			<ul class="nav_regular">
+				<li><a href="js_names.html">ITA Cohort</a></li>
+				<li><a href="#">Not A</a></li>
+				<li><a href="#">Real Link</a></li>
+				<li><a href="contact_form.html">Contact Form</a></li>
+				<li class="dropnav">Dropdown
+					<ul class="dropdown_links">
+						<li><a href="#">Link1</a></li>
+						<li><a href="#">Link2</a></li>
+						<li><a href="#">Link3</a></li>
+					</ul></li>
+			</ul>
+
+
+
+			<!--
+			<div class="nav_regular">
+				<p><a href="js_names.html">ITA Cohort</a></p>
+				<p><a href="#">Not A</a></p>
+				<p><a href="#">Real Link</a></p>
+				<p><a href="contact_form.html">Contact Form</a></p>
+			</div>
+			<div class="dropdown">
+	    		<p class="dropnav">Dropdown</p>
+	    			<span class="dropdown_links">
+	      				<a href="#">Link 1</a>
+	      				<a href="#">Link 2</a>
+	      				<a href="#">Link 3</a>
+	    			</span>
+	 		</div> -->
+		</nav><!--/nav header-->
+		<aside class="sidebar">
+			<h3>Red Ventures Non-Profits</h3>
+			<ul>
+				<li><a href=" https://www.goldendoorscholars.org/">Golden Door Scholars</a></li>
+				<li><a href="https://www.roadtohire.org/">Road to Hire</a></li>
+				<li><a href="https://www.forward787.com/">Forward 787</a></li>
+				<li><a href="https://lifesports.org/">LifeSports</a></li>
+			</ul>
+		</aside><!--/sidebar aside-->
+			
+		<main class="main-content clearfix">
+			<div class="subhead">
+				<h4>My RV History</h4>
+				<p>I am on my way to my 3rd different career in 4.5 years at Red Ventures.</p>
+				<p>I started as a CE analyst/associate out of school and through a combination of timing and relevant experience, joined the inaugural Analytics team in August of 2017.</p>
+				<p>After leading data integration/reporting strategy for multiple new partnerships (and refusing to do so again after Amex...), I moved to the central Common Data Model team where I focused on building out standardized reporting and advanced analytics tools using Tableau.</p>
+				<p>And now here I am, beyond excited for my foray into software engineering! With a background in marketing, data analytics, and software engineering I can't wait to see what I can do for RV in the future.</p>
+			</div>
+			<div class="subhead">
+				<h4>It's Pride Month!</h4>
+				<p>What better than making an unordered list of the Pride flag?</p>
+				<ul class="rainbow">
+					<li style="background:red">Red</li>
+					<li style="background:orange">Orange</li>
+					<li style="background:yellow">Yellow</li>
+					<li style="background:green;color:white">Green</li>
+					<li style="background:blue;color:white">Blue</li>
+					<li style="background:indigo; color:white;">Indigo</li>
+					<li style="background:violet">Violet</li>
+				</ul>
+			</div>
+		</main><!--/main-->
+		
+		<footer>
+			<nav class="footer clearfix">
+				<ul class="nav">
+					<li class="nav_footer">Copyright 2019</li>
+					<li class="nav_footer"><a href="https://www.facebook.com/redventures">Facebook</a></li>
+					<li class="nav_footer"><a href="https://twitter.com/RedVentures">Twitter</a></li>
+					<li class="nav_footer"><a href="https://www.linkedin.com/company/red-ventures/">LinkedIn</a></li>
+				</ul>
+			</nav><!--/footer nav-->
+		</footer>
+	</body>
+</html>
