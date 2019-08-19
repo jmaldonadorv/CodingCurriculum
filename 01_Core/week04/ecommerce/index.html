@@ -1,0 +1,120 @@
+<!-- Left to do: 
+	1) Add form for adding to cart
+	2) Add JS to show the different thumbnail images
+-->
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Stardust Designs || Contemporary Furniture</title>
+		<link rel="stylesheet" href="stylesheets/normalize.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<script src="javascript.js"></script>
+	</head><!--/head-->
+	<body>
+		<header>
+			<nav class="main-nav">
+				<ul class="nav__ul h-marg-0">
+					<li><img src="images/logo_banner.png" class="logo"></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="products/index.html">Products</a></li>
+					<li><a href="contact/index.html">Contact</a></li>
+					<li><a href="search/index.html">Search</a></li>
+				</ul>
+				<!--/.nav__ul-->
+			</nav>
+			<!--/.main-nav-->
+		</header>
+			<!-- Slideshow container -->
+		<div class="slider h-padtop">
+			  <!-- Full-width images with number and caption text -->
+			<div class="images fade">
+				<img src="images/sliders/slider_1.png" class="slider__image">
+			    <p class="slider__caption">Make yourself at home on one of our comfy couches</p>
+			</div>
+			<!--/.images fade-->
+			<div class="images fade">
+				<img src="images/sliders/slider_2.png" class="slider__image">
+				<p class="slider__caption">Slide into sleep in this contemporary platform bedroom set</p>
+			</div>
+			<!--/.images fade-->
+			<div class="images fade">
+				<img src="images/sliders/slider_3.png" class="slider__image">
+				<p class="slider__caption">Spice it up with succulents this summer</p>
+			</div>
+			<!--/.images fade-->
+			<div class="images fade">
+				<img src="images/sliders/slider_4.png" class="slider__image">
+				<p class="slider__caption">Curl up with piles of pillows in this uphostered dream</p>
+			</div>
+			<!--/.images fade-->
+
+
+			<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusImages(-1)">&#10094;</a>
+				<a class="next" onclick="plusImages(1)">&#10095;</a>
+			</div><!--/.slider-->
+
+			<!-- The dots/circles -->
+			<div class="dot__container h-margin-top">
+				<span class="dot img--selector" onclick="currentImage(1)"></span> 
+				<span class="dot img--selector" onclick="currentImage(2)"></span> 
+				<span class="dot img--selector" onclick="currentImage(3)"></span> 
+				<span class="dot img--selector" onclick="currentImage(4)"></span> 
+			</div><!--/.slider-->
+		<main>
+		<h1 class="h-text-center">Featured Products</h1>
+			<div class="featured">
+				<div class="featured__item">
+					<a href="products/product_details.html" class="featured__link">
+						<img class="featured__image" src="images/featured/featured_1.png">
+						<p class="featured__name">Fuschia Floral Canvas</p>
+						<p class="featured__price">$79</p>
+					</a>
+				</div>
+				<!--/.featured__item-->
+				<div class="featured__item">
+					<a href="products/product_details.html" class="featured__link">
+						<img class="featured__image" src="images/featured/featured_2.png">
+						<p class="featured__name">Mid Century Fiberglass Chair</p>
+						<p class="featured__price">$190</p>
+					</a>
+				</div>
+				<!--/.featured__item-->
+				<div class="featured__item">
+					<a href="products/product_details.html" class="featured__link">
+						<img class="featured__image" src="images/featured/featured_3.png">
+						<p class="featured__name">Upholstered King Bedroom Set</p>
+						<p class="featured__price">$1250</p>
+					</a>
+				</div>
+				<!--/.featured__item-->
+				<div class="featured__item">
+					<a href="products/product_details.html" class="featured__link">
+					<img class="featured__image" src="images/featured/featured_4.png">
+					<p class="featured__name">Powder Blue Loveseat</p>
+					<p class="featured__price">$650</p>
+				</a>
+				</div>
+				<!--/.featured__item-->
+			</div>
+			<!--/.featured-->
+		</main>
+
+		<footer>
+			<nav class="footer-nav">
+				<ul class="nav__ul">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="products/index.html">Products</a></li>
+					<li><a href="contact/index.html">Contact</a></li>
+					<li><a href="search/index.html">Search</a></li>
+				</ul>
+				<!--.footer__ul-->
+			</nav>
+			<!--/.footer-nav-->
+		</footer>
+	</body>
+</html>

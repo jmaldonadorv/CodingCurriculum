@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {box-sizing:border-box}
+/* SLIDESHOW CSS */
+/* Slideshow container */
+
+body {
+  font-family: 'Open Sans','Helvetica','Verdana','sans-serif';
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  min-height: calc(100vh - 200px);
+  padding-top: 10px;
+  width: 95%;
+  margin: auto;
+}
+
+.h-marg-0 {
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.h-padtop {
+  padding-top: 200px;
+}
+
+.h-ul-nav {
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.h-bold-black {
+  font-weight: bold;
+  font-color: black;
+}
+
+.h-text-center {
+  text-align: center;
+}
+
+
+.slider {
+  max-width: 1250px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+}
+
+
+/* Hide the images by default */
+.images {
+  max-height: 400px;
+}
+
+.slider__image {
+  width: 100%;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.slider__caption {
+  color: #f2f2f2;
+  background-color: #022B3A;
+  opacity: 0.6;
+  width: 100%;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 2px;
+  text-align: center;
+  margin: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot__container {
+  width: 50%;
+  margin: auto;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* END OF SLIDER CSS */
+
+/* MAIN CONTENT CSS */
+.main {
+  width: 90%;
+}
+
+
+/* FEATURED AND PRODUCT CSS 
+
+Currently same CSS being used for featured & full product list sections */
+
+.featured {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Full item, including image, name, and price */
+.featured__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured__image {
+  padding: 0 30px;
+  flex
+}
+
+.featured__name {
+  text-align: center;
+  font-style: italic;
+  color: black;
+  font-size: 15px;
+  padding: 5px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.featured__price {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 5px 0 10px 0;
+}
+
+/* END OF FEATURED CSS */
+
+/* PRODUCT CSS 
+Specifically for the product page
+*/
+.menu__filter {
+  padding-top: 10px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.menu__filter ul {
+  height: 50px;
+  padding: 0;
+  background-color: lightgrey;
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.menu__filter li {
+  width: 17%;
+  padding: 5px;
+  margin: 10px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  box-shadow: 3px 2px 5px 0 darkgrey;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.menu__filter li:hover {
+  cursor: pointer;
+  background-color: darkgrey;
+  border: 1px solid black;
+}
+
+
+/* NAVIGATION CSS */
+
+.main-nav {
+  position: fixed;
+  height: 210px;
+  background: white;
+  width: 100%;
+  background-color: #E1E5F2;
+  border-bottom: 2px solid #022B3A;
+  outline: 2px solid #BFDBF7;
+  box-shadow: 0 5px 15px 0 #022B3A;
+  z-index: 2;
+}
+
+.nav__ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav {
+  width: 100%;
+  height: 120px;
+  background-color: #E1E5F2;
+  box-shadow: 0 -3px 10px 0 darkgrey;
+  border-top: 2px solid #022B3A;
+  outline: 2px solid #BFDBF7;
+  margin-top: 30px;
+}
+
+
+.nav__ul li {
+  display: inline-block;
+
+  font-weight: bolder;
+  text-align: center;
+  padding: 5px;
+}
+
+.nav__ul a {
+  color: black;
+  text-transform: uppercase;
+}
+
+.nav__ul a:visited {
+  color: black;
+}
+
+.nav__ul a:hover {
+  text-decoration: underline;
+}
+
+/* CONTACT FORM CSS */
+
+.contact-form {
+  width: 70%;
+  margin: auto;
+}
+
+.contact-form label {
+  display: block;
+  padding: 5px;
+}
+
+.contact-form fieldset {
+  border: 1px solid darkgrey;
+  background-color: lightgrey;
+  margin: 15px;
+  box-shadow: 5px 5px 8px 0 darkgrey;
+  border-radius: 10px;
+}
+
+.contact-form legend {
+  padding: 5px;
+  background-color: white;
+  border: 1px solid darkgrey;
+  box-shadow: 2px 3px 5px 0 darkgrey;
+}
+
+.contact-form--required {
+  color: red;
+}
+
+.btn--save {
+  cursor: pointer;
+  display: block;
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  margin: auto;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 0 darkgrey;
+  border: 1px solid darkgrey;
+}
+
+.btn--add-cart {
+  cursor: pointer;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  margin: auto;
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 0 darkgrey;
+  border: 1px solid darkgrey;
+}
+
+.search-bar {
+  width: 300px;
+  height: 40px;
+  border: 1px solid darkgrey;
+  margin: 20px auto;
+  box-shadow: 2px 2px 3px 0 darkgrey;
+  display: flex;
+}
+
+main a {
+  color: black;
+}
+
+main a:hover {
+  color: gold;
+}
+
+main a:visted {
+  color: black;
+}
+
+
+/* PDP CSS */
+
+.pdp__wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pdp__image {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pdp__content {
+  padding: 20px;
+}
+
+
+.pdp__image--main {
+  padding: 20px;
+  height: 430px;
+}
+
+
+.pdp__image--thumbnails {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+}
+.img--thumbnail {
+  max-width: auto;
+  align-self: center;
+  padding: 5px;
+  margin: 5px auto;
+  height: 70px;
+  opacity: 0.6;
+  border: 1px solid lightgrey;
+}
+
+.img--thumbnail:hover {
+  opacity: 1.0;
+}
+
+.img--main {
+  display: block;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+}
+
+.form__dropdown {
+  min-width: 75px;
+  display: inline-block;
+  margin: 20px;
+}
+
+#comments {
+  width: 90%;
+}
+
+/* MEDIA QUERIES FOR > 800 PIXELS */
+
+@media (min-width: 801px) {
+  
+  main {
+    min-height: calc(100vh - 400px)
+  }
+
+  .logo {
+    height: 100px;
+  }
+
+  .main-nav {
+    height: 120px;
+  }
+  
+  .nav__ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  .nav__ul li a {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-nav {
+    height: 50px;
+  }
+
+  .h-padtop {
+    padding-top: 120px;
+  }
+
+  .featured,
+  .product {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .pdp__wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: flex-start;
+    margin: auto;
+  }
+
+  .pdp__image--main {
+    width: 450px;
+  }
+
+  .img--thumbnail {
+    height: 80px;
+  }
+
+}
+
+
