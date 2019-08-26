@@ -8,9 +8,13 @@ import (
 	"text/template"
 )
 
-var templates = template.Must(template.ParseFiles("edit.html", "view.html")) // Parses out the provided files so that the data can be injected and the HTML file rendered successfully. Doing this once in the variable instead of calling it multiple times is more efficient.
-var validPath = regexp.MustCompile("^/(edit|save|view)/([a-zA-Z0-9]+)$")     // Initializing a regexp - the MustCompile function ensures that the regexp passed through is valid and can be used to match against text.
+// var templates is a *Template; function parses out the provided files so that the data can be injected and the HTML file rendered successfully.
+// Doing this once in the variable instead of calling it multiple times is more efficient.
+var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
+
+// Initializing a regexp - the MustCompile function ensures that the regexp passed through is valid and can be used to match against text.
 // Returns a regexp to be used to match against the file names later. Makes sure that the request URL is in the form of /view(etc)/alphanumeric
+var validPath = regexp.MustCompile("^/(edit|save|view)/([a-zA-Z0-9]+)$")
 
 // Page : Representing each page in the wiki
 type Page struct {
