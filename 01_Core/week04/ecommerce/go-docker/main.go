@@ -20,6 +20,10 @@ type Product struct {
 	Description string  `json:"description"`
 	Price       float64 `json:"price"`
 	Category    string  `json:"category"`
+	Pic1        string  `json:"pic_1"`
+	Pic2        string  `json:"pic_2"`
+	Pic3        string  `json:"pic_3"`
+	Pic4        string  `json:"pic_4"`
 }
 
 func main() {
@@ -36,8 +40,9 @@ func main() {
 	router := mux.NewRouter()
 
 	// Telling the server what to listen for and what to do
-	router.HandleFunc("/products/{id}", getProduct)
-	router.HandleFunc("/", getAllProducts)
+	router.HandleFunc("/api/products/featured", getFeaturedProducts)
+	router.HandleFunc("/api/products/{id}", getSingleProduct)
+	router.HandleFunc("/api/products", getAllProducts)
 
 	// Creating the server
 	fmt.Printf("listening on port %s\n", port)
@@ -49,10 +54,50 @@ func main() {
 
 // Handler function for getting all products
 func getAllProducts(w http.ResponseWriter, r *http.Request) {
+	query := "SELECT Id, Name, Description, Price, Category FROM products"
+	getMultipleProducts(w, r, query)
+	fmt.Println("all product api run")
+}
+
+// Handler function for getting featured products
+func getFeaturedProducts(w http.ResponseWriter, r *http.Request) {
+	query := "SELECT Id, Name, Description, Price, Category FROM products WHERE featured = 1"
+	getMultipleProducts(w, r, query)
+	fmt.Println("all product api run")
+}
+
+// Handler function for getting a single product
+func getSingleProduct(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:9090")
+	params := mux.Vars(r)
+	query := "SELECT Id, Name, Description, Price, Category, pic_1, pic_2, pic_3, pic_4 FROM products"
+	result, err := db.Query(query+" WHERE Id = ?", params["id"])
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer result.Close()
+
+	for result.Next() {
+		var product Product
+		err := result.Scan(&product.ID, &product.Name, &product.Description, &product.Price, &product.Category,
+			&product.Pic1, &product.Pic2, &product.Pic3, &product.Pic4)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		json.NewEncoder(w).Encode(product)
+		fmt.Println("single product api run")
+	}
+}
+
+func getMultipleProducts(w http.ResponseWriter, r *http.Request, query string) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:9090")
 	// If it's a get request, we want to query and return the products
 	if r.Method == http.MethodGet {
 		products := []Product{}
-		query := "SELECT Id, Name, Description, Price, Category FROM products"
 		rows, err := db.Query(query)
 		if err != nil {
 			// Print error and return to leave the function
@@ -72,35 +117,5 @@ func getAllProducts(w http.ResponseWriter, r *http.Request) {
 		}
 		// Encoding the struct into JSON that will show on the page with no html
 		json.NewEncoder(w).Encode(products)
-
-	}
-	// Passing back a status header
-	w.WriteHeader(http.StatusCreated)
-	fmt.Println("all product api run")
-	w.Write([]byte("Status ok"))
-
-}
-
-// Handler function for getting a single product
-func getProduct(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	params := mux.Vars(r)
-	query := "SELECT Id, Name, Description, Price, Category FROM products"
-	result, err := db.Query(query+" WHERE Id = ?", params["id"])
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer result.Close()
-
-	for result.Next() {
-		var product Product
-		err := result.Scan(&product.ID, &product.Name, &product.Description, &product.Price, &product.Category)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		json.NewEncoder(w).Encode(product)
-		fmt.Println("single product api run")
 	}
 }

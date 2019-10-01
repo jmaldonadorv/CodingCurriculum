@@ -4,9 +4,9 @@
 /* SLIDESHOW CSS */
 /* Slideshow container */
 
-body {
+html, body {
   font-family: 'Open Sans','Helvetica','Verdana','sans-serif';
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -15,7 +15,7 @@ a {
 }
 
 main {
-  min-height: calc(100vh - 200px);
+  min-height: 100vh;
   padding-top: 10px;
   width: 95%;
   margin: auto;
@@ -462,7 +462,7 @@ main a:visted {
 @media (min-width: 801px) {
   
   main {
-    min-height: calc(100vh - 400px)
+    min-height: calc(100vh - 78px)
   }
 
   .logo {

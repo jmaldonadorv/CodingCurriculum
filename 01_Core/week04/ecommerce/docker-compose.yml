@@ -35,6 +35,7 @@ services:
       - app-server
     networks:
       - frontend  
+      - backend
 
   # Database Service (Mysql)
   db:
