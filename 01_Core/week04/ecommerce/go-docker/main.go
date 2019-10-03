@@ -52,24 +52,23 @@ func main() {
 
 }
 
-// Handler function for getting all products
+// getAllProducts sets the query for all products & runs getMultipleProducts to run the query
 func getAllProducts(w http.ResponseWriter, r *http.Request) {
 	query := "SELECT Id, Name, Description, Price, Category FROM products"
 	getMultipleProducts(w, r, query)
 	fmt.Println("all product api run")
 }
 
-// Handler function for getting featured products
+// getFeaturedProducts sets the query for featured products & runs getMultipleProducts to run the query
 func getFeaturedProducts(w http.ResponseWriter, r *http.Request) {
 	query := "SELECT Id, Name, Description, Price, Category FROM products WHERE featured = 1"
 	getMultipleProducts(w, r, query)
-	fmt.Println("all product api run")
+	fmt.Println("featured product api run")
 }
 
-// Handler function for getting a single product
+// getSingleProduct queries and retrieves a single product from the database for the PDP
 func getSingleProduct(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:9090")
+	setHeaders(w, r)
 	params := mux.Vars(r)
 	query := "SELECT Id, Name, Description, Price, Category, pic_1, pic_2, pic_3, pic_4 FROM products"
 	result, err := db.Query(query+" WHERE Id = ?", params["id"])
@@ -78,7 +77,7 @@ func getSingleProduct(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer result.Close()
-
+	// Taking all of the results & putting themt into a Product struct
 	for result.Next() {
 		var product Product
 		err := result.Scan(&product.ID, &product.Name, &product.Description, &product.Price, &product.Category,
@@ -87,14 +86,15 @@ func getSingleProduct(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(err)
 			return
 		}
+		// Encoding the struct into JSON will allow us to access the JSON object using javascript
 		json.NewEncoder(w).Encode(product)
 		fmt.Println("single product api run")
 	}
 }
 
+// getMultipleProducts queries & retrieves multiple products from the database
 func getMultipleProducts(w http.ResponseWriter, r *http.Request, query string) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:9090")
+	setHeaders(w, r)
 	// If it's a get request, we want to query and return the products
 	if r.Method == http.MethodGet {
 		products := []Product{}
@@ -104,6 +104,7 @@ func getMultipleProducts(w http.ResponseWriter, r *http.Request, query string) {
 			fmt.Println(err)
 			return
 		}
+		// Taking all of the results & putting themt into a Product struct
 		// As long as there is a next row, we are defining which fields the product struct will be assigned
 		for rows.Next() {
 			var product Product
@@ -115,7 +116,13 @@ func getMultipleProducts(w http.ResponseWriter, r *http.Request, query string) {
 			// Appending all product structs to the products slice
 			products = append(products, product)
 		}
-		// Encoding the struct into JSON that will show on the page with no html
+		// Encoding the struct into JSON will allow us to access the JSON object using javascript
 		json.NewEncoder(w).Encode(products)
 	}
+}
+
+// setHeaders sets the headers for the response
+func setHeaders(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:9090")
 }
